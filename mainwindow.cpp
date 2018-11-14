@@ -14,9 +14,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    this->setWindowFlags(Qt::FramelessWindowHint|windowFlags());
     this->setAcceptDrops(true);
     ui->setupUi(this);
+    ui->lGitHub->setOpenExternalLinks(true);
+    ui->lGitHub->setText(tr("<a href=\"https://github.com/Laonuan/Hash-for-Mac/\">@GitHub"));
+
 }
 
 MainWindow::~MainWindow()
@@ -98,7 +100,6 @@ void MainWindow::on_btnSave_clicked()
     }
 
     ui->btnSave->setEnabled(true);
-
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -179,3 +180,13 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
         move(event->pos() - m_point + pos());//移动当前窗口
 }
 
+
+void MainWindow::on_actionMinimize_triggered()
+{
+    this->showMinimized();
+}
+
+void MainWindow::on_actionClose_triggered()
+{
+    this->close();
+}

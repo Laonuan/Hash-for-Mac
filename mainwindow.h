@@ -23,6 +23,10 @@ private slots:
     void on_btnSave_clicked();
     void on_btnExit_clicked();
 
+    void on_actionMinimize_triggered();
+
+    void on_actionClose_triggered();
+
 private:
     Ui::MainWindow *ui;
 
