@@ -1,0 +1,1 @@
+Hash for Mac.
